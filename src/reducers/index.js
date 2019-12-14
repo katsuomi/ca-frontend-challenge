@@ -3,5 +3,5 @@ import series from './series';
 import books from './books';
 
 export default combineReducers({
-  series,books
+  series,books,favorites
 })
