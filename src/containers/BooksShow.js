@@ -3,12 +3,11 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import ImgsViewer from 'react-images-viewer';
 import CardContent from '@material-ui/core/CardContent';
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { Link,useParams,history } from 'react-router-dom';
 import { useActions } from '../actions';
 import { useSelector } from 'react-redux';
 
-const BooksShow = () => {
+const BooksShow = (props) => {
   const [currentPageCount, setCurrentPageCount] = useState(0)
   const [favoriteCount, setfavoriteCount] = useState(0)
   const [isGifDisplay, setIsGifDisplay] = useState(false)
@@ -40,13 +39,15 @@ const BooksShow = () => {
       setfavoriteCount(0)
     }
   }
-  console.log(favorites)
+  
+  !isOpen && props.props.history.push('/')
+
   return(
     <>
-      <Grid container className="vh100">
+      <Grid container className='vh100'>
         {isGifDisplay && 
-          <div className="likeStyle">
-            <img src={`${process.env.PUBLIC_URL}/images/like.gif`} alt="like" className="likeStyle2" />
+          <div className='likeStyle'>
+            <img src={`${process.env.PUBLIC_URL}/images/like.gif`} alt='like' className='likeStyle2' />
           </div>
         }
         <ImgsViewer
