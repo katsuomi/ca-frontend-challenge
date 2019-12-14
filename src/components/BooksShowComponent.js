@@ -5,12 +5,12 @@ import BooksShow from '../containers/BooksShow';
 const BooksShowComponent = () => {
   return(
     <>
-      <Grid container>
-        <Grid item md={1} lg={1}></Grid>
-        <Grid item xs={12} sm={12} md={10} lg={10}>
+      <Grid>
+        <Grid item lg={1}></Grid>
+        <Grid item xs={12} lg={10}>
           <BooksShow />
         </Grid>
-        <Grid item md={1} lg={1}></Grid>
+        <Grid item lg={1}></Grid>
       </Grid>
     </>
   );

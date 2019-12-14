@@ -18,14 +18,14 @@ const BooksShow = () => {
   console.log(pages)
   return(
     <>
-      <Grid container>
-        {pages && pages.map((page,i) => (
-          <Grid item xs={12} key={i}>
+      <Grid container className="vh100">
+        {pages && (
+          <Grid item xs={12}>
             <Card>
-              <img src={page.imageUrl} alt={page.imageUrl} width="100%" />
+              <img src={pages[0].imageUrl} alt={pages[0].imageUrl} className="pageStyle" />
             </Card>
           </Grid>
-        ))}
+        )}
       </Grid>
     </>
   );

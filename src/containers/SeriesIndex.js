@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { useActions } from '../actions';
