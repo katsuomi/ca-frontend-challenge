@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import SeriesIndex from '../containers/SeriesIndex';
+import FavoritesIndex from '../containers/FavoritesIndex';
 
 const TopComponent = () => {
   return(
@@ -10,6 +11,7 @@ const TopComponent = () => {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={2}></Grid>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={8}>
             <SeriesIndex />
+            <FavoritesIndex />
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={2}></Grid>
         </Grid>

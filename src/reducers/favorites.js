@@ -3,15 +3,15 @@ import {
 } from '../actions';
 
 const initialState = { 
-  favorites: [],
+  allFavorites: [],
 }
 
 const favorites = (state = initialState, action) => {
   switch(action.type) {
     case POST_FAVORITE:
-      const favorite = { imageUrl: action.imageUrl }
+      const favorite = { index: action.index ,id: action.bookId,imageUrl: action.imageUrl }
       return {
-        favorites: [...state.favorites,{...favorite} ]
+        allFavorites: [...state.allFavorites,{...favorite} ]
       };
     default:
       return state

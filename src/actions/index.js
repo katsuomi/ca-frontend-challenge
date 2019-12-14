@@ -55,10 +55,12 @@ export const useActions = () => {
     })
   }
 
-  const postFavorite = (imageUrl) => {
+  const postFavorite = (imageUrl,bookId,index) => {
     dispatch({
       type: POST_FAVORITE,
-      imageUrl
+      imageUrl,
+      bookId,
+      index
     })
   }
 

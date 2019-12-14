@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useActions } from '../actions';
 import { useSelector } from 'react-redux';
 
-const AllSeries = () => {
+const SeriesIndex = () => {
   const allSeries = useSelector(state => state.series.allSeries);
   const [ getAllSeries,getSeries,getBook,postFavorite ] = useActions();
   useEffect(() => {
@@ -59,6 +59,10 @@ const AllSeries = () => {
     ]
   };
 
+  if (allSeries === undefined || allSeries.length === 0) {
+    return null;
+  }
+
   return(
     <>
       <p className="nowReadableMangaFontStyle">現在読める漫画({allSeries.length})</p>
@@ -76,4 +80,4 @@ const AllSeries = () => {
   );
 }
 
-export default AllSeries;
+export default SeriesIndex;

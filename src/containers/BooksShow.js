@@ -15,9 +15,14 @@ const BooksShow = (props) => {
   const book = useSelector(state => state.books.book);
   const favorites = useSelector(state => state.favorites.favorites);
   const [ getAllSeries,getSeries,getBook,postFavorite ] = useActions();
+  const index = window.location.search.replace('?index=', '')
   let id = useParams().id;
+  const getIndex = () => {
+    index && setCurrentPageCount(currentPageCount + Number(index))
+  }
   useEffect(() => {
     getBook(id);
+    getIndex();
   }, []);
   const pages = book && book.imageData
   const imgSet = ( pages || []).map((page) =>{
@@ -34,12 +39,11 @@ const BooksShow = (props) => {
     setfavoriteCount(favoriteCount + 1)
     if(favoriteCount === 1){
       setIsGifDisplay(true);
-      postFavorite(imgSet[currentPageCount].src)
+      postFavorite(imgSet[currentPageCount].src,id,currentPageCount)
       window.setTimeout(() => setIsGifDisplay(false), 1200);
       setfavoriteCount(0)
     }
   }
-  
   !isOpen && props.props.history.push('/')
 
   return(
