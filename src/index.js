@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './slick.css';
 import TopComponent from './components/TopComponent';
 import SeriesShowComponent from './components/SeriesShowComponent';
 import BooksShowComponent from './components/BooksShowComponent';

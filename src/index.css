@@ -9,6 +9,11 @@ body {
     height: 300px;
     object-fit: cover;
   }
+
+  .top-slider-image-style{
+    width: 98%;
+    height:50vw;
+  }
 }
 
 /* タブレット表示の時 */
@@ -17,6 +22,11 @@ body {
     width: 100%;
     height: 600px;
     object-fit: cover;
+  }
+
+  .top-slider-image-style{
+    width: 98%;
+    height:65vw;
   }
 }
 
@@ -27,8 +37,19 @@ body {
     height: 500px;
     object-fit: cover;
   }
+
+  .top-slider-image-style{
+    width: 98%;
+    height:50vw;
+  }
 }
 
 .allSeriesImg{
   width: 100%;
+}
+
+.nowReadableMangaFontStyle{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
 }
