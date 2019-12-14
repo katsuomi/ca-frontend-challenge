@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const AllSeries = () => {
   const allSeries = useSelector(state => state.series.allSeries);
-  const [ getAllSeries,getSeries,getBook ] = useActions();
+  const [ getAllSeries,getSeries,getBook,postFavorite ] = useActions();
   useEffect(() => {
     getAllSeries()
   }, []);

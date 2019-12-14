@@ -14,7 +14,8 @@ const BooksShow = () => {
   const [isGifDisplay, setIsGifDisplay] = useState(false)
   const [isOpen, setIsOpen] = useState(true)
   const book = useSelector(state => state.books.book);
-  const [ getAllSeries,getSeries,getBook ] = useActions();
+  const favorites = useSelector(state => state.favorites.favorites);
+  const [ getAllSeries,getSeries,getBook,postFavorite ] = useActions();
   let id = useParams().id;
   useEffect(() => {
     getBook(id);
@@ -34,10 +35,12 @@ const BooksShow = () => {
     setfavoriteCount(favoriteCount + 1)
     if(favoriteCount === 1){
       setIsGifDisplay(true);
+      postFavorite(imgSet[currentPageCount].src)
       window.setTimeout(() => setIsGifDisplay(false), 1200);
+      setfavoriteCount(0)
     }
   }
-
+  console.log(favorites)
   return(
     <>
       <Grid container className="vh100">

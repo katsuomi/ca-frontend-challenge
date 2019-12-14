@@ -6,6 +6,7 @@ const BOOKS_ROOT_URL = 'https://wfc2-image-api-259809.appspot.com/api/books';
 export const GET_ALL_SERIES = 'GET_ALL_SERIES';
 export const GET_SERIES = 'GET_SERIES';
 export const GET_BOOK = 'GET_BOOK';
+export const POST_FAVORITE = 'POST_FAVORITE';
 
 export const useActions = () => {
   const dispatch = useDispatch()
@@ -54,5 +55,12 @@ export const useActions = () => {
     })
   }
 
-  return [ getAllSeries,getSeries,getBook ]
+  const postFavorite = (imageUrl) => {
+    dispatch({
+      type: POST_FAVORITE,
+      imageUrl
+    })
+  }
+
+  return [ getAllSeries,getSeries,getBook,postFavorite ]
 }

@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 const SeriesShow = () => {
   let id = useParams().id;
   const series = useSelector(state => state.series.series);
-  const [ getAllSeries,getSeries,getBook ] = useActions();
+  const [ getAllSeries,getSeries,getBook,postFavorite ] = useActions();
   useEffect(() => {
     getSeries(id)
   }, []);
