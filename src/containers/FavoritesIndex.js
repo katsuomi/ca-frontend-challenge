@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, {  } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import { useActions } from '../actions';
 import { useSelector } from 'react-redux';
 
 const FavoritesIndex = () => {
@@ -54,6 +53,10 @@ const FavoritesIndex = () => {
       }
     ]
   };
+
+  if (allFavorites === undefined || allFavorites.length === 0) {
+    return null;
+  }
 
   return(
     <>

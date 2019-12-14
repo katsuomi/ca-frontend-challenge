@@ -13,8 +13,8 @@ const BooksShow = (props) => {
   const [isGifDisplay, setIsGifDisplay] = useState(false)
   const [isOpen, setIsOpen] = useState(true)
   const book = useSelector(state => state.books.book);
-  const favorites = useSelector(state => state.favorites.favorites);
   const [ getAllSeries,getSeries,getBook,postFavorite ] = useActions();
+
   const index = window.location.search.replace('?index=', '')
   let id = useParams().id;
   const getIndex = () => {

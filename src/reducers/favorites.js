@@ -2,7 +2,7 @@ import {
   POST_FAVORITE
 } from '../actions';
 
-const initialState = { 
+const initialState = {
   allFavorites: [],
 }
 
