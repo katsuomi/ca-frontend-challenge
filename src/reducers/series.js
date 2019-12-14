@@ -1,20 +1,25 @@
 import {
-  GET_ALL_SERIES,
+  GET_ALL_SERIES,GET_SERIES
 } from '../actions';
 
 const initialState = { 
-  allSeries: []
+  allSeries: [],
+  series: {}
 }
 
-const auths = (state = initialState, action) => {
+const series = (state = initialState, action) => {
   switch(action.type) {
     case GET_ALL_SERIES:
       return {
         allSeries: action.allSeries
+      }
+    case GET_SERIES:
+      return {
+        series: action.series
       }
     default:
       return state
   }
 }
 
-export default auths
+export default series

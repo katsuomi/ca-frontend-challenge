@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-const SERIES_ROOT_URL = 'https://wfc2-image-api-259809.appspot.com/api/series/';
-const BOOKS_ROOT_URL = 'https://wfc2-image-api-259809.appspot.com/api/books/';
+const SERIES_ROOT_URL = 'https://wfc2-image-api-259809.appspot.com/api/series';
+const BOOKS_ROOT_URL = 'https://wfc2-image-api-259809.appspot.com/api/book/';
 
 export const GET_ALL_SERIES = 'GET_ALL_SERIES';
+export const GET_SERIES = 'GET_SERIES';
 
 export const useActions = () => {
   const dispatch = useDispatch()
@@ -21,5 +22,21 @@ export const useActions = () => {
       alert(err)
     })
   }
-  return [ getAllSeries ]
+
+  const getSeries = (id) => {
+    axios.get(`${SERIES_ROOT_URL}/${id}`,{})
+    .then((result) => {
+      const series = result.data
+      console.log("success:",result)
+      dispatch({
+        type: GET_SERIES,
+        series
+      })
+    })
+    .catch(err => {
+      alert(err)
+    })
+  }
+
+  return [ getAllSeries,getSeries ]
 }
