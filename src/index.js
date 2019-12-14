@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import TopComponent from './components/TopComponent';
 import SeriesShowComponent from './components/SeriesShowComponent';
+import BooksShowComponent from './components/BooksShowComponent';
 import * as serviceWorker from './serviceWorker';
 import reducer from './reducers';
 import { createStore } from 'redux';
@@ -16,6 +17,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path="/" component={TopComponent} /> 
             <Route exact path="/series/:id" component={SeriesShowComponent} /> 
+            <Route exact path="/books/:id" component={BooksShowComponent} /> 
           </Switch>
       </BrowserRouter>
   </Provider>, 
