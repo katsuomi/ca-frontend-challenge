@@ -32,7 +32,7 @@ const CommentForm = (props) => {
         value={comment} 
         onChange={e => setComment(e.target.value)}
       />
-      <Button className='commentStyle' color='secondary' disabled={unCreatable} onClick={postComment}>
+      <Button className='' color='secondary' disabled={unCreatable} onClick={postComment}>
         <i className='material-icons commentStyle3'>
           comment
         </i>

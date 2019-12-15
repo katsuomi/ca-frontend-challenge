@@ -33,7 +33,7 @@ body {
 
   .top-slider-image-style{
     width: 98%;
-    height:65vw;
+    height:60vw;
   }
 
   .displayOnlyXs{
@@ -51,7 +51,7 @@ body {
 
   .top-slider-image-style{
     width: 98%;
-    height:50vw;
+    height:40vw;
   }
 
   .displayOnlyXs{
@@ -102,11 +102,14 @@ body {
   position: absolute;
   left: 8%;
   top: 9px;
+  width: 100%;
+  display: flex;
 }
 
 .commentStyle2{
   width: 250px;
   background-color: white;
+  flex: 1;
 }
 
 .commentStyle3{
@@ -114,9 +117,6 @@ body {
   font-size: 30px;
   border-radius: 50%;
   background-color: white;
-  position: fixed;
-  top: 92.5%;
-  right: 4%;
 }
 
 .favoritePagesFontStyle{
