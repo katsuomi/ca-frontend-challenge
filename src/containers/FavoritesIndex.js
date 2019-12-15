@@ -55,6 +55,18 @@ const FavoritesIndex = () => {
     ]
   };
 
+  const uniqAllFavorites = allFavorites
+  .reduce((array, item) => { // 3. uniqueな値のみ抽出
+    const some = array.some(
+      v => v.id === item.id && v.index === item.index
+    );
+    if (!some){
+      array.push(item);
+    }
+
+    return array;
+  },[]);
+
   if (allFavorites === undefined || allFavorites.length === 0) {
     return (
       <div className='sweet-loading-favorites'>
@@ -70,9 +82,9 @@ const FavoritesIndex = () => {
 
   return(
     <>
-      <p className="favoritePagesFontStyle">いいねしたページ({allFavorites.length})</p>
+      <p className="favoritePagesFontStyle">いいねしたページ({uniqAllFavorites.length})</p>
       <Slider {...settings}>
-        {allFavorites.map((page,i) => (
+        {uniqAllFavorites.map((page,i) => (
           <div key={i}>
             <Link to={`/books/${page.id}?index=${page.index}`}>
               <img src={page.imageUrl} alt="favorite" className='top-slider-image-style' />
