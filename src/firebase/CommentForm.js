@@ -14,7 +14,8 @@ const CommentForm = (props) => {
       id: props.id,
       index: props.index,
       content: comment,
-      createdAt: now
+      createdAt: now,
+      goodCount: 0
     }
     commentsRef.push(data);
     setComment('');

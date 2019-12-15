@@ -18,6 +18,7 @@ class GetComments extends Component {
   componentDidMount(){
     const commentsRef = db.ref(`/comments/${this.props.id}/${this.props.index}`);
     commentsRef.on('child_added', (snapshot) => {
+      const key = snapshot.key
       const m = snapshot.val()
       let msgs = this.state.comments
       msgs.push({
@@ -25,6 +26,8 @@ class GetComments extends Component {
         'index' : m.index,
         'content' : m.content,
         'createdAt' : m.createdAt,
+        'goodCount' : m.goodCount,
+        'key': key
       })
 
       this.setState({
@@ -41,12 +44,15 @@ class GetComments extends Component {
       const commentsRef = db.ref(`/comments/${this.props.id}/${this.props.index}`);
       const msgs = [];
       commentsRef.on('child_added', (snapshot) => {
+        const key = snapshot.key
         const m = snapshot.val();
         msgs.push({
           'id' : m.id,
           'index' : m.index,
           'content' : m.content,
           'createdAt' : m.createdAt,
+          'goodCount' : m.goodCount,
+          'key': key
         })
       })
       this.setState({
@@ -62,6 +68,47 @@ class GetComments extends Component {
     const handleClose = () => {
       this.setState({isOpen: false})
     };
+
+    const handleCountUp = (comment) => {
+      const commentsRef = db.ref(`/comments/${this.props.id}/${this.props.index}/${comment.key}`);
+      const count = comment.goodCount + 1;
+      const data = {
+        goodCount: count
+      }
+      commentsRef.update(data);
+      getDB()
+    }
+
+    const handleCountDown = (comment) => {
+      const commentsRef = db.ref(`/comments/${this.props.id}/${this.props.index}/${comment.key}`);
+      const count = comment.goodCount - 1;
+      const data = {
+        goodCount: count
+      }
+      commentsRef.update(data);
+      getDB()
+    }
+
+    const getDB = () => {
+      const commentsRef = db.ref(`/comments/${this.props.id}/${this.props.index}`);
+      const msgs = [];
+      commentsRef.on('child_added', (snapshot) => {
+        const key = snapshot.key
+        const m = snapshot.val();
+        msgs.push({
+          'id' : m.id,
+          'index' : m.index,
+          'content' : m.content,
+          'createdAt' : m.createdAt,
+          'goodCount' : m.goodCount,
+          'key': key
+        })
+      })
+      this.setState({
+        comments : msgs
+      });
+    }
+
     const comments = this.state.comments.slice(0).reverse()
     return (
       <>
@@ -75,9 +122,18 @@ class GetComments extends Component {
             {comments.map((comment,i) => (
               <Typography gutterBottom key={i}>
                 <i className='material-icons fontSize40px'>
-                  account_circle
+                account_circle
                 </i>
                 <span className='fontSize20px commnetContentStyle'>{comment.content}</span>
+                <p className='commnetContentStyle3'>
+                  <i className='material-icons' onClick={() => handleCountUp(comment)}>
+                    thumb_up
+                  </i>
+                  <span className='commnetContentStyle4'>{comment.goodCount}</span>
+                  <i className='material-icons' onClick={() => handleCountDown(comment)}>
+                    thumb_down
+                  </i>  
+                </p>
                 <p className='commnetContentStyle2'>{comment.createdAt}</p>
                 <hr/>
               </Typography>
