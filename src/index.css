@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap');
+
 body {
   margin: 0;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 /* スマホ表示の時 */
