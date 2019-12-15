@@ -14,6 +14,10 @@ body {
     width: 98%;
     height:50vw;
   }
+
+  .displayOnlyXs{
+    display: block;
+  }
 }
 
 /* タブレット表示の時 */
@@ -27,6 +31,10 @@ body {
   .top-slider-image-style{
     width: 98%;
     height:65vw;
+  }
+
+  .displayOnlyXs{
+    display: none;
   }
 }
 
@@ -42,6 +50,10 @@ body {
     width: 98%;
     height:50vw;
   }
+
+  .displayOnlyXs{
+    display: none;
+  }
 }
 
 .allSeriesImg{
@@ -56,6 +68,10 @@ body {
 
 .vh100{
   height: 100vh;
+}
+
+.vh90{
+  height: 90vh;
 }
 
 .pageStyle{
@@ -78,9 +94,91 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.commentStyle{
+  z-index: 200000000000;
+  position: absolute;
+  left: 8%;
+  top: 9px;
+}
+
+.commentStyle2{
+  width: 250px;
+  background-color: white;
+}
+
+.commentStyle3{
+  padding: 10px;
+  font-size: 30px;
+  border-radius: 50%;
+  background-color: white;
+  position: fixed;
+  top: 92.5%;
+  right: 4%;
+}
+
 .favoritePagesFontStyle{
   font-size: 30px;
   font-weight: bold;
   text-align: center;
   margin-top: 55px;
+}
+
+.commentsStyle{
+  z-index: 200000000001;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+.zIndex{
+  z-index: 2000000000000000000;
+}
+
+.relative{
+  position: relative;
+}
+
+.displayCommentStyle{
+  z-index: 200000000000;
+  position: absolute;
+  top: 40px;
+}
+
+.displayCommentStyle2{
+  z-index: 200000000000;
+  width: 200px;
+}
+
+.DoalogStyle{
+  z-index: 2000000000000000 !important;
+  width: 100%;
+  height: 100%;
+}
+
+.fontSize40px{
+  font-size: 40px !important;
+}
+
+.fontSize30px{
+  font-size: 30px !important;
+}
+
+.fontSize20px{
+  font-size: 20px !important;
+}
+
+.commnetContentStyle{
+  color: rgb(97, 97, 97);
+  padding: 15px;
+}
+
+.commnetContentStyle2{
+  font-size: 10px;
+  color: rgb(189, 189, 189);
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+.absolute{
+  position: absolute;
 }

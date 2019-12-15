@@ -1,11 +1,15 @@
 import React, { useState,useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import ImgsViewer from 'react-images-viewer';
+import TextField from '@material-ui/core/TextField';
 import CardContent from '@material-ui/core/CardContent';
+import ChatIcon from '@material-ui/icons/Chat';
+import ImgsViewer from 'react-images-viewer';
 import { Link,useParams,history } from 'react-router-dom';
 import { useActions } from '../actions';
 import { useSelector } from 'react-redux';
+import CommentForm from '../firebase/CommentForm';
+import GetComments from '../firebase/GetComments';
 
 const BooksShow = (props) => {
   const [currentPageCount, setCurrentPageCount] = useState(0)
@@ -48,12 +52,15 @@ const BooksShow = (props) => {
 
   return(
     <>
-      <Grid container className='vh100'>
+      <Grid container className='vh90'>
         {isGifDisplay && 
           <div className='likeStyle'>
             <img src={`${process.env.PUBLIC_URL}/images/like.gif`} alt='like' className='likeStyle2' />
           </div>
         }
+        <div className="relative">
+          <GetComments id={id} index={currentPageCount} />
+        </div>
         <ImgsViewer
           imgs={imgSet}
           currImg={currentPageCount}
@@ -64,6 +71,9 @@ const BooksShow = (props) => {
           onClose={() => setIsOpen(false)}
         />
       </Grid>
+      <div className="relative">
+        <CommentForm id={id} index={currentPageCount} />
+      </div>
     </>
   );
 }
