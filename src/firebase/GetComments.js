@@ -35,7 +35,6 @@ class GetComments extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.index !== prevProps.index) {
-      console.log("Yeah!!!!!!!!!!!")
       this.setState({
         comments : []
       });
