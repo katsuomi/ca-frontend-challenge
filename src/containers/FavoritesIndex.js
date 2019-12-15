@@ -2,11 +2,9 @@ import React, {  } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Loader from 'react-loader-spinner';
 
 const FavoritesIndex = () => {
   const allFavorites = useSelector(state => state.favorites.allFavorites);
-  console.log(allFavorites)
   const settings = {
     className: 'center',
     centerMode: true,
@@ -67,24 +65,11 @@ const FavoritesIndex = () => {
     return array;
   },[]);
 
-  if (allFavorites === undefined || allFavorites.length === 0) {
-    return (
-      <div className='sweet-loading-favorites'>
-        <Loader
-          type="TailSpin"
-          color="#00BFFF"
-          height={100}
-          width={100}
-        />
-      </div> 
-    );
-  }
-
   return(
     <>
-      <p className="favoritePagesFontStyle">いいねしたページ({uniqAllFavorites.length})</p>
+      <p className="favoritePagesFontStyle">いいねしたページ({allFavorites && uniqAllFavorites.length})</p>
       <Slider {...settings}>
-        {uniqAllFavorites.map((page,i) => (
+        {allFavorites && uniqAllFavorites.map((page,i) => (
           <div key={i}>
             <Link to={`/books/${page.id}?index=${page.index}`}>
               <img src={page.imageUrl} alt="favorite" className='top-slider-image-style' />
