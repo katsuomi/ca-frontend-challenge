@@ -58,7 +58,7 @@ const BooksShow = (props) => {
             <img src={`${process.env.PUBLIC_URL}/images/like.gif`} alt='like' className='likeStyle2' />
           </div>
         }
-        <div className="relative">
+        <div className='relative'>
           <GetComments id={id} index={currentPageCount} />
         </div>
         <ImgsViewer
@@ -71,7 +71,7 @@ const BooksShow = (props) => {
           onClose={() => setIsOpen(false)}
         />
       </Grid>
-      <div className="relative">
+      <div className='relative'>
         <CommentForm id={id} index={currentPageCount} />
       </div>
     </>

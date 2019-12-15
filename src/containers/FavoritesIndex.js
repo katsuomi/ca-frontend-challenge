@@ -67,12 +67,12 @@ const FavoritesIndex = () => {
 
   return(
     <>
-      <p className="favoritePagesFontStyle">いいねしたページ({allFavorites && uniqAllFavorites.length})</p>
+      <p className='favoritePagesFontStyle'>いいねしたページ({allFavorites && uniqAllFavorites.length})</p>
       <Slider {...settings}>
         {allFavorites && uniqAllFavorites.map((page,i) => (
           <div key={i}>
             <Link to={`/books/${page.id}?index=${page.index}`}>
-              <img src={page.imageUrl} alt="favorite" className='top-slider-image-style' />
+              <img src={page.imageUrl} alt='favorite' className='top-slider-image-style' />
             </Link>
           </div>
         ))}

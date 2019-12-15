@@ -64,8 +64,8 @@ const SeriesIndex = () => {
     return (
       <div className='sweet-loading-allSeries'>
         <Loader
-          type="TailSpin"
-          color="#00BFFF"
+          type='TailSpin'
+          color='#00BFFF'
           height={100}
           width={100}
         />
@@ -75,7 +75,7 @@ const SeriesIndex = () => {
 
   return(
     <>
-      <p className="nowReadableMangaFontStyle">現在読める漫画({allSeries.length})</p>
+      <p className='nowReadableMangaFontStyle'>現在読める漫画({allSeries.length})</p>
       <Slider {...settings}>
         {allSeries.map((series,i) => (
           <div key={i}>

@@ -15,14 +15,13 @@ const SeriesShow = () => {
   useEffect(() => {
     getSeries(id)
   }, []);
-  console.log(series)
   const books = series && series.books
   return(
     <>
       <Grid container>
         {books && books.map((book,i) => (
           <Grid item xs={6} md={6} lg={4} key={i}>
-            <Link to={"/books/"+book.id}>
+            <Link to={'/books/'+book.id}>
               <LazyLoad height={500} >
                 <img src={book.image} alt={book.title} className='allBooksImg' />
               </LazyLoad>

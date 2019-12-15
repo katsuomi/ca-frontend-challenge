@@ -14,7 +14,7 @@ export const useActions = () => {
     axios.get(SERIES_ROOT_URL,{})
     .then((result) => {
       const allSeries = result.data.data
-      console.log("success:",result)
+      console.log('success:',result)
       dispatch({
         type: GET_ALL_SERIES,
         allSeries
@@ -29,7 +29,7 @@ export const useActions = () => {
     axios.get(`${SERIES_ROOT_URL}/${id}`,{})
     .then((result) => {
       const series = result.data
-      console.log("success:",result)
+      console.log('success:',result)
       dispatch({
         type: GET_SERIES,
         series
@@ -44,7 +44,7 @@ export const useActions = () => {
     axios.get(`${BOOKS_ROOT_URL}/${id}`,{})
     .then((result) => {
       const book = result.data
-      console.log("success:",result)
+      console.log('success:',result)
       dispatch({
         type: GET_BOOK,
         book

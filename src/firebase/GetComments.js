@@ -62,30 +62,29 @@ class GetComments extends Component {
     const handleClose = () => {
       this.setState({isOpen: false})
     };
-    console.log(this.state.comments)
     const comments = this.state.comments.slice(0).reverse()
     return (
       <>
-        <div className="displayCommentStyle">
-          <Button variant="contained" color="primary" className="displayCommentStyle2" onClick={handleClickOpen}>
+        <div className='displayCommentStyle'>
+          <Button variant='contained' color='primary' className='displayCommentStyle2' onClick={handleClickOpen}>
             コメントを表示
           </Button>
         </div>
-        <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={this.state.isOpen} className="DoalogStyle">
+        <Dialog onClose={handleClose} aria-labelledby='customized-dialog-title' open={this.state.isOpen} className='DoalogStyle'>
           <DialogContent dividers>
             {comments.map((comment,i) => (
               <Typography gutterBottom key={i}>
-                <i className="material-icons fontSize40px">
+                <i className='material-icons fontSize40px'>
                   account_circle
                 </i>
-                <span className="fontSize20px commnetContentStyle">{comment.content}</span>
-                <p className="commnetContentStyle2">{comment.createdAt}</p>
+                <span className='fontSize20px commnetContentStyle'>{comment.content}</span>
+                <p className='commnetContentStyle2'>{comment.createdAt}</p>
                 <hr/>
               </Typography>
             ))}
           </DialogContent>
           <DialogActions>
-            <Button autoFocus onClick={handleClose} color="primary">
+            <Button autoFocus onClick={handleClose} color='primary'>
               閉じる
             </Button>
           </DialogActions>

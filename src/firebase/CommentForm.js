@@ -23,7 +23,7 @@ const CommentForm = (props) => {
 
   return(
     <>
-    <form className="commentStyle">
+    <form className='commentStyle'>
       <TextField 
         id='outlined-basic' 
         label='コメントを入力' 
