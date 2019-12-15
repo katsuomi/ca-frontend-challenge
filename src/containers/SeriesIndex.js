@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { useActions } from '../actions';
 import { useSelector } from 'react-redux';
+import Loader from 'react-loader-spinner';
 
 const SeriesIndex = () => {
   const allSeries = useSelector(state => state.series.allSeries);
@@ -60,7 +61,16 @@ const SeriesIndex = () => {
   };
 
   if (allSeries === undefined || allSeries.length === 0) {
-    return null;
+    return (
+      <div className='sweet-loading-allSeries'>
+        <Loader
+          type="TailSpin"
+          color="#00BFFF"
+          height={100}
+          width={100}
+        />
+      </div> 
+    );
   }
 
   return(

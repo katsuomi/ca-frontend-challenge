@@ -176,9 +176,33 @@ body {
   font-size: 10px;
   color: rgb(189, 189, 189);
   margin-top: 15px;
-  margin-left: 50px;
+  text-align: right;
 }
 
 .absolute{
   position: absolute;
+}
+
+.sweet-loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.sweet-loading-allSeries{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.sweet-loading-favorites{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

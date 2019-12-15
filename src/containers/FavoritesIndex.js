@@ -2,6 +2,7 @@ import React, {  } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Loader from 'react-loader-spinner';
 
 const FavoritesIndex = () => {
   const allFavorites = useSelector(state => state.favorites.allFavorites);
@@ -55,7 +56,16 @@ const FavoritesIndex = () => {
   };
 
   if (allFavorites === undefined || allFavorites.length === 0) {
-    return null;
+    return (
+      <div className='sweet-loading-favorites'>
+        <Loader
+          type="TailSpin"
+          color="#00BFFF"
+          height={100}
+          width={100}
+        />
+      </div> 
+    );
   }
 
   return(
