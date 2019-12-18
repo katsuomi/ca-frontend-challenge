@@ -81,7 +81,6 @@ const SeriesIndex = () => {
           <div key={i}>
             <Link to={'/series/'+series.seriesId}>
               <img src={series.seriesImage} alt={series.title} className='top-slider-image-style' />
-              {/* <span className='none-less-1220px'><span className='ribbon12'>{series.title}</span></span> */}
             </Link>
           </div>
         ))}
